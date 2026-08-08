@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "Home";
+}
+<div class="hero p-5 rounded-4">
+    <h1 class="display-5 fw-bold">Conference Attendee Check-in</h1>
+    <p class="lead">Monitor attendee arrivals, current presence, and departures in one place.</p>
+    @if (User.Identity?.IsAuthenticated == true)
+    {
+        <a class="btn btn-primary btn-lg" asp-controller="Attendee" asp-action="Index">Open Monitoring</a>
+    }
+    else
+    {
+        <a class="btn btn-primary btn-lg" asp-controller="Account" asp-action="Login">Staff Login</a>
+        <a class="btn btn-outline-primary btn-lg ms-2" asp-controller="Account" asp-action="Register">Register</a>
+    }
+</div>

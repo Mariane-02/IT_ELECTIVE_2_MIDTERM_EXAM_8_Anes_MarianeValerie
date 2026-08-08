@@ -1,0 +1,16 @@
+@model AttendeeVisit
+@{
+    ViewData["Title"] = "Record Check-Out";
+}
+<div class="row justify-content-center"><div class="col-md-6">
+<div class="card shadow-sm"><div class="card-body p-4">
+<h2>Record Check-Out</h2>
+<p>Are you sure you want to record the departure of:</p>
+<h4>@Model.FirstName @Model.LastName</h4>
+<p class="text-muted">Ticket: @Model.TicketNumber</p>
+<form asp-action="CheckOutConfirmed" method="post">
+<input type="hidden" name="id" value="@Model.Id" />
+<button class="btn btn-warning">Confirm Check-Out</button>
+<a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+</div></div></div></div>

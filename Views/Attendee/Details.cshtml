@@ -1,0 +1,21 @@
+@model AttendeeVisit
+@{
+    ViewData["Title"] = "Attendee Details";
+}
+<h1>Attendee Details</h1>
+<div class="card shadow-sm"><div class="card-body">
+<dl class="row">
+<dt class="col-sm-4">Ticket Number</dt><dd class="col-sm-8">@Model.TicketNumber</dd>
+<dt class="col-sm-4">Attendee</dt><dd class="col-sm-8">@Model.FirstName @Model.LastName</dd>
+<dt class="col-sm-4">Company/School</dt><dd class="col-sm-8">@Model.Organization</dd>
+<dt class="col-sm-4">Contact Number</dt><dd class="col-sm-8">@Model.ContactNumber</dd>
+<dt class="col-sm-4">Email</dt><dd class="col-sm-8">@Model.Email</dd>
+<dt class="col-sm-4">Event Name</dt><dd class="col-sm-8">@Model.EventName</dd>
+<dt class="col-sm-4">Check-In</dt><dd class="col-sm-8">@Model.CheckInTime.ToString("MMM dd, yyyy h:mm tt")</dd>
+<dt class="col-sm-4">Check-Out</dt><dd class="col-sm-8">@(Model.CheckOutTime?.ToString("MMM dd, yyyy h:mm tt") ?? "-")</dd>
+<dt class="col-sm-4">Status</dt><dd class="col-sm-8">@Model.Status</dd>
+<dt class="col-sm-4">Notes</dt><dd class="col-sm-8">@Model.Notes</dd>
+</dl>
+<a asp-action="Index" class="btn btn-secondary">Back</a>
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+</div></div>
