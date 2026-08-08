@@ -1,0 +1,5 @@
+body { background: #f6f8fb; }
+.hero { background: linear-gradient(135deg, #eaf2ff, #ffffff); border: 1px solid #dbe7f7; }
+.card { border: 0; }
+.table { border-radius: .75rem; overflow: hidden; }
+footer { background: #fff; }
